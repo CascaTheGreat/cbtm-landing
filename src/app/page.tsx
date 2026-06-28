@@ -17,6 +17,7 @@ const HomePage: React.FC = () => {
       <Container>
         <Benefits />
 
+        {/*
         <Section
           id="pricing"
           title="Pricing"
@@ -24,7 +25,9 @@ const HomePage: React.FC = () => {
         >
           <Pricing />
         </Section>
+        */}
 
+        {/*
         <Section
           id="testimonials"
           title="What Our Clients Say"
@@ -32,11 +35,14 @@ const HomePage: React.FC = () => {
         >
           <Testimonials />
         </Section>
+        */}
 
         <FAQ />
 
+        {/*
         <Stats />
-        
+        */}
+
         <CTA />
       </Container>
     </>

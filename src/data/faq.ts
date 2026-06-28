@@ -2,24 +2,28 @@ import { IFAQ } from "@/types";
 import { siteDetails } from "./siteDetails";
 
 export const faqs: IFAQ[] = [
-    {
-        question: `Is ${siteDetails.siteName} secure?`,
-        answer: 'Absolutely. We use bank-level encryption to protect your data and never store your login information. Plus, our biometric authentication adds an extra layer of security.',
-    },
-    {
-        question: `Can I use ${siteDetails.siteName} on multiple devices?`,
-        answer: 'Absolutely! Your Finwise account syncs seamlessly across all your devices - smartphone, tablet, and computer.',
-    },
-    {
-        question: 'Can I connect all my bank accounts?',
-        answer: `Yes! ${siteDetails.siteName} supports connections with over 10,000 financial institutions worldwide. Simply log in through our secure portal to link your accounts.`
-    },
-    {
-        question: 'Do I need any financial expertise to use the investing features?',
-        answer: 'Not at all! Our expert-curated portfolios and educational resources make investing accessible to everyone, regardless of experience level.',
-    },
-    {
-        question: 'What if I need help using the app?',
-        answer: 'Our dedicated support team is available 24/7 via chat or email. Plus, we offer extensive in-app tutorials and a comprehensive knowledge base to help you make the most of Finwise.'
-    }
+  {
+    question: `Is ${siteDetails.siteName} secure?`,
+    answer:
+      "Absolutely. All location information is calculated on your device, so our servers only send out anonymous, aggregated data. When you share your location with friends, only the building you are in is shared, not your exact location. We also use end-to-end encryption for all data transfers, ensuring your information remains private and secure.",
+  },
+  {
+    question: `Can I use ${siteDetails.siteName} on multiple devices?`,
+    answer:
+      "Only one device can be connected to your account at a time. If you log in on a new device, the previous device will be automatically logged out. Support for wearables is coming soon, allowing you to stay connected away from your phone.",
+  },
+  {
+    question: `Is ${siteDetails.siteName} available on Android?`,
+    answer: `${siteDetails.siteName} is only available on iOS at the moment, but we are actively working on an Android version. Stay tuned for updates!`,
+  },
+  {
+    question: `How does ${siteDetails.siteName} make money if the app is free?`,
+    answer:
+      "We offer subscriptions for premium features, which help us maintain and improve the app. Additionally, we may partner with select businesses to provide location-based services, like promoting restaurants in the explore section.",
+  },
+  {
+    question: `How does ${siteDetails.siteName} provide accurate location information?`,
+    answer:
+      "CBTM uses a proprietary combination of GPS, Wi-Fi, and cellular data to provide accurate location information. We analyze this data to match your location to campus buildings with a high degree of accuracy.",
+  },
 ];

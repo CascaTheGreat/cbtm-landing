@@ -5,12 +5,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #FED835;
-  --secondary: #304fff;
+  --primary: #010057;
+  --secondary: #0300ae;
 
-  --primary-accent: #e5c230;
+  --primary-accent: #0300ae;
   --foreground-accent: #454545;
-  --hero-background: #F3F3F5;
+  --hero-background: #f3f3f5;
 }
 
 html {
@@ -19,7 +19,7 @@ html {
 
 body {
   @apply text-lg;
-  
+
   color: var(--foreground);
   background: var(--background);
   font-family: "Source Sans 3", sans-serif;
@@ -33,16 +33,16 @@ body {
   }
 }
 
-.manrope {
-  font-family: "Manrope", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Berthold", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  letter-spacing: 0.04em;
 }
 
 #logos svg {

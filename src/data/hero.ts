@@ -1,5 +1,6 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
-    centerImageSrc: '/images/hero-mockup.webp',
-}
+  heading: "Always Know The Move",
+  subheading:
+    "Get live insights into campus locations, chat with friends, and find the best spots to hang out. CBTM is your ultimate campus companion.",
+  centerImageSrc: "/images/hero-mockup.webp",
+};
