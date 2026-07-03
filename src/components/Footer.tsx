@@ -24,6 +24,11 @@ const Footer: React.FC = () => {
           <p className="mt-3.5 text-foreground-accent">
             {footerDetails.subheading}
           </p>
+          <p className="mt-3.5 text-foreground-accent text-sm">
+            *Our app attempts to negotiate beyond AES-256 encryption, but some
+            devices may not support it. In such cases, we will use the highest
+            level of encryption available on your device.
+          </p>
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">Quick Links</h4>

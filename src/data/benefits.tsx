@@ -1,72 +1,94 @@
-import { FiBarChart2, FiBriefcase, FiDollarSign, FiLock, FiPieChart, FiShield, FiTarget, FiTrendingUp, FiUser } from "react-icons/fi";
+import {
+  FiBarChart2,
+  FiBriefcase,
+  FiDollarSign,
+  FiLock,
+  FiPieChart,
+  FiShield,
+  FiTarget,
+  FiTrendingUp,
+  FiUser,
+} from "react-icons/fi";
 
-import { IBenefit } from "@/types"
+import { IBenefit } from "@/types";
 
 export const benefits: IBenefit[] = [
-    {
-        title: "Smart Budgeting",
-        description: "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
-        bullets: [
-            {
-                title: "Intelligent Categorization",
-                description: "Automatically sorts your transactions for crystal-clear insights.",
-                icon: <FiBarChart2 size={26} />
-            },
-            {
-                title: "Customizable Goals",
-                description: "Set and track financial objectives that matter to you.",
-                icon: <FiTarget size={26} />
-            },
-            {
-                title: "Predictive Analysis",
-                description: "Get ahead of your finances with spending forecasts and alerts.",
-                icon: <FiTrendingUp size={26} />
-            }
-        ],
-        imageSrc: "/images/mockup-1.webp"
-    },
-    {
-        title: "Seamless Investing",
-        description: "Start building wealth today, no financial degree required. Finwise makes investing accessible and straightforward.",
-        bullets: [
-            {
-                title: "Micro-Investing",
-                description: "Begin with as little as $1 and watch your money grow.",
-                icon: <FiDollarSign size={26} />
-            },
-            {
-                title: "Expert Portfolios",
-                description: "Choose from investment strategies tailored to your risk tolerance.",
-                icon: <FiBriefcase size={26} />
-            },
-            {
-                title: "Real-Time Performance",
-                description: "Track your investments with easy-to-understand metrics and visuals.",
-                icon: <FiPieChart size={26} />
-            }
-        ],
-        imageSrc: "/images/mockup-2.webp"
-    },
-    {
-        title: "Bank-Grade Security",
-        description: "Your financial data deserves the best protection. Rest easy knowing Finwise employs cutting-edge security measures.",
-        bullets: [
-            {
-                title: "Military-Grade Encryption",
-                description: "Your information is safeguarded with the highest level of encryption.",
-                icon: <FiLock size={26} />
-            },
-            {
-                title: "Biometric Authentication",
-                description: "Access your account securely with fingerprint or facial recognition.",
-                icon: <FiUser size={26} />
-            },
-            {
-                title: "Real-Time Fraud Detection",
-                description: "Our system constantly monitors for suspicious activity to keep your money safe.",
-                icon: <FiShield size={26} />
-            }
-        ],
-        imageSrc: "/images/mockup-1.webp"
-    },
-]
+  {
+    title: "Always Locked",
+    description:
+      "Take the guesswork out of a night out. With CBTM, you can always know how busy a bar is before you go, so you can plan your night with confidence.",
+    bullets: [
+      {
+        title: "Intelligent Localization",
+        description:
+          "Our proprietary location matching algorithm gets you excellent information, every time.",
+        icon: <FiBarChart2 size={26} />,
+      },
+      {
+        title: "In The Know",
+        description:
+          "Our real-time data ensures you always know the best spots to be, and the ones to avoid.",
+        icon: <FiTarget size={26} />,
+      },
+      {
+        title: "Predictive Insights",
+        description:
+          "Get ahead of the crowd with our predictive analytics, helping you plan your night out like a pro.",
+        icon: <FiTrendingUp size={26} />,
+      },
+    ],
+    imageSrc: "/images/mockup-1.webp",
+  },
+  {
+    title: "Read the Room",
+    description:
+      "Access crowd-source insights on the vibes and atmosphere of your favorite spots.",
+    bullets: [
+      {
+        title: "Pricing FR",
+        description:
+          "Get a college-student friendly breakdown of the cost of drinks and cover charges.",
+        icon: <FiDollarSign size={26} />,
+      },
+      {
+        title: "Vibe Check",
+        description:
+          "Get real-time, crowd-source vibe checks on your favorite hangs.",
+        icon: <FiBriefcase size={26} />,
+      },
+      {
+        title: "Chop it Up",
+        description:
+          "Join dedicated feeds to yap about the situation while you're there.",
+        icon: <FiPieChart size={26} />,
+      },
+    ],
+    imageSrc: "/images/mockup-2.webp",
+  },
+  {
+    title: "Fed-Tier Security",
+    description:
+      "Your location is important. We spare no expense in keeping your information safe and secure.",
+    bullets: [
+      {
+        title: "Military-Grade Encryption",
+        description:
+          "We encrypt your data from the moment it leaves your device with AES-256, the same standard used by the U.S. government.*",
+        icon: <FiLock size={26} />,
+      },
+      {
+        title: "You Control Access",
+        description:
+          "You have complete control over which users can see your access and when. Users will never see more than you allow, and then never more than the building you're in.",
+        icon: <FiUser size={26} />,
+      },
+      {
+        title: "Never Sold or Shared",
+        description:
+          "At CBTM, we're freaks about personal privacy. We don't sell identifying information about you to anyone without your express consent. We partner with Google to serve ads that may be personalized if you choose to opt-in - that's it.",
+        icon: <FiShield size={26} />,
+      },
+    ],
+    imageSrc: "/images/mockup-3.webp",
+  },
+];
