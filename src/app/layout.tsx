@@ -56,6 +56,10 @@ export const metadata: Metadata = {
     description: siteDetails.metadata.description,
     images: ["/images/OG.png"],
   },
+  itunes: {
+    appId: "66JX3388MN", // Placeholder for the actual App Store ID
+    appArgument: "cbtm://", // Placeholder for the actual app argument
+  },
 };
 
 export default function RootLayout({
