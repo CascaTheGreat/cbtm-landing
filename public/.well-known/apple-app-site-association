@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "66JX3388MN.com.lledlow.cbtm",
+        "paths": [
+          "/app/*"
+        ]
+      }
+    ]
+  }
+}
