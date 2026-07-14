@@ -52,3 +52,21 @@ export interface ISocials {
   x?: string;
   [key: string]: string | undefined;
 }
+
+export type Event = {
+  id: number;
+  host: number;
+  name: string;
+  description: string;
+  start_time: string; //2026-07-14 01:51:49+00 ISO format
+  end_time: string;
+  location: number;
+  popularity?: number;
+  sublocation?: number;
+  action_link?: string;
+};
+
+export type POI = {
+  id: number;
+  name: string;
+};
