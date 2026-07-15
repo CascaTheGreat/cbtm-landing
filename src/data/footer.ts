@@ -25,6 +25,11 @@ export const footerDetails: {
       text: "Terms of Service",
       url: "/terms-of-service",
     },
+    { text: "Share Your CBTMoment", url: "/share-your-cbtmoment" },
+    {
+      text: "Submit Your Event",
+      url: "/submit-event",
+    },
   ],
   email: "help@cbtm.app",
   telephone: "+1 (123) 456-7890",

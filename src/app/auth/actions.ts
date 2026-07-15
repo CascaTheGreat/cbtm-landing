@@ -29,6 +29,9 @@ export async function verifyOTP(email: string, token: string) {
 }
 
 export async function getCurrentUser(authId?: string) {
+  if (!authId) {
+    return { id: null, name: null, type: null };
+  }
   const supabase = createClient();
 
   const { data: user, error: userError } = await supabase
