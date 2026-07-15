@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/nsc5rlo.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +12,7 @@
   --primary-accent: #0300ae;
   --foreground-accent: #454545;
   --hero-background: #f3f3f5;
+  --font-berthold: "berthold-block-w1g", sans-serif;
 }
 
 html {
@@ -22,8 +24,10 @@ body {
 
   color: var(--foreground);
   background: var(--background);
-  font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
+  font-style: normal;
+  font-family: "berthold-block-w1g", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -39,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Berthold", sans-serif;
+  font-family: "berthold-block-w1g", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   letter-spacing: 0.04em;
