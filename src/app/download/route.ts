@@ -15,7 +15,7 @@ export async function GET(req: Request) {
 
   try {
     fetch(
-      `https://google-analytics.com{GA_TRACKING_ID}&api_secret=${GA_API_SECRET}`,
+      `https://google-analytics.com/mp/collect/?measurement_id=${GA_TRACKING_ID}&api_secret=${GA_API_SECRET}`,
       {
         method: "POST",
         body: JSON.stringify({
