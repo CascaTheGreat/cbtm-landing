@@ -182,18 +182,23 @@ const Form: React.FC = () => {
               htmlFor="consent"
               className="text-sm leading-6 text-[var(--foreground)]"
             >
-              I consent to sharing my CBTMoment and understand that it may be
-              used for promotional purposes. If I shared a photo, I confirm that
-              I have the rights to it, and have obtained any necessary
-              permissions from anyone featured in the photo. I represent that
-              none of the depicted actions are illegal in the jurisdiction where
-              the photo was taken. I understand that my submission may be
-              reviewed and edited before being published. I understand that I
-              will not receive any compensation for my submission, and that my
-              submission may be used in various media formats, including but not
-              limited to social media, websites, and promotional materials. I
-              acknowledge that I have read and agree to the terms of this
-              consent.
+              I certify that I have read and agree to the{" "}
+              <a
+                href="https://docs.google.com/document/d/1areEFXGxfPxomHoPXVvc4N9LKgy6mT1Pfi4nU8wP76k/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[var(--primary)] hover:text-[var(--secondary)]"
+              >
+                Terms and Conditions
+              </a>
+              . By submitting this form, I acknowledge that my CBTMoment may be
+              shared publicly on the CBTM platform and may be used for
+              promotional purposes. I understand that I am responsible for the
+              content I submit and that it must comply with the platform's
+              guidelines. I also confirm that I have obtained any necessary
+              permissions for the content I am submitting, and I release the
+              CBTM platform from any liability related to the use of my
+              submitted content.
             </label>
           </div>
         </div>
