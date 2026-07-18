@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 import { createClient } from "@/lib/supabaseClient";
 
@@ -10,13 +11,21 @@ const Form: React.FC = () => {
   const supabase = createClient();
   const [file, setFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
+  const params = useSearchParams();
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!params.get("user_id")) {
+      alert(
+        "CBTM user ID is missing. Please make sure you came from the app and try again.",
+      );
+      return;
+    }
     const formData = new FormData(e.currentTarget);
     const name = String(formData.get("name") ?? "").trim();
     const instagram = String(formData.get("instagram") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
+    const userId = String(params.get("user_id") ?? "").trim();
 
     if (!file) {
       alert("Please select a file first!");
@@ -33,6 +42,7 @@ const Form: React.FC = () => {
       username: name,
       instagram,
       message,
+      user_id: userId,
       file_path: path,
     });
 
@@ -103,6 +113,7 @@ const Form: React.FC = () => {
             required
             className="w-full rounded-2xl border border-[#d7d9f0] bg-white px-4 py-3 text-[var(--foreground)] shadow-sm outline-none transition placeholder:text-[#8c8fa8] focus:border-[var(--primary)] focus:ring-4 focus:ring-[#0100571a]"
             placeholder="Your CBTM handle"
+            defaultValue={params.get("user_name") || ""}
           />
         </div>
 
@@ -174,13 +185,15 @@ const Form: React.FC = () => {
               I consent to sharing my CBTMoment and understand that it may be
               used for promotional purposes. If I shared a photo, I confirm that
               I have the rights to it, and have obtained any necessary
-              permissions from anyone featured in the photo. I understand that
-              my submission may be reviewed and edited before being published. I
-              understand that I will not receive any compensation for my
-              submission, and that my submission may be used in various media
-              formats, including but not limited to social media, websites, and
-              promotional materials. I acknowledge that I have read and agree to
-              the terms of this consent.
+              permissions from anyone featured in the photo. I represent that
+              none of the depicted actions are illegal in the jurisdiction where
+              the photo was taken. I understand that my submission may be
+              reviewed and edited before being published. I understand that I
+              will not receive any compensation for my submission, and that my
+              submission may be used in various media formats, including but not
+              limited to social media, websites, and promotional materials. I
+              acknowledge that I have read and agree to the terms of this
+              consent.
             </label>
           </div>
         </div>
