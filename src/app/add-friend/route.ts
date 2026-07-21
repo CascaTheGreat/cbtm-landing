@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, userAgent } from "next/server";
 
 const GA_TRACKING_ID = process.env.GOOGLE_ANALYTICS_ID;
 const GA_API_SECRET = process.env.GOOGLE_MEASUREMENT_SECRET;
@@ -14,10 +14,9 @@ export async function GET(req: Request) {
   const userID = searchParams.get("user_id") || "unknown_user";
   const clientId = crypto.randomUUID(); // Generate a unique client ID for this request
 
-  console.log("utmData", utmSource, utmMedium, utmCampaign, userID);
-
+  const { device } = userAgent(req);
   const isiOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    device?.type === "mobile" && /iPad|iPhone|iPod/.test(device?.model || "");
 
   // Log non-iOS device access to GA4
   if (!isiOS) {
