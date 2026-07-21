@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 import { cookies } from "next/headers";
-import { createClient } from "@/lib/supabaseServer";
+import { createClient } from "@/lib/supabase/supabaseServer";
 
 export async function GET(request: NextRequest) {
   const id = request.nextUrl.searchParams.get("id");

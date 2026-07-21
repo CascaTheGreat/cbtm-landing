@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { createClient } from "@/lib/supabaseClient";
+import { createClient } from "@/lib/supabase/supabaseClient";
 
 const EventForm: React.FC<{ userId: number }> = ({ userId }) => {
   const router = useRouter();

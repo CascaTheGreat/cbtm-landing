@@ -1,6 +1,6 @@
 "use server";
 
-import { createClient } from "@/lib/supabaseClient";
+import { createClient } from "@/lib/supabase/supabaseClient";
 
 export async function sendOTP(email: string) {
   const supabase = createClient();

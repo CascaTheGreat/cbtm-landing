@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 
-import { createClient } from "@/lib/supabaseClient";
+import { createClient } from "@/lib/supabase/supabaseClient";
 
 const Form: React.FC = () => {
   const router = useRouter();

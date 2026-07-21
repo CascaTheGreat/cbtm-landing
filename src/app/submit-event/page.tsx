@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import EventForm from "@/components/EventForm";
 import OTP from "@/components/OTP";
-import { createClient } from "@/lib/supabaseServer";
+import { createClient } from "@/lib/supabase/supabaseServer";
 import { cookies } from "next/headers";
 import { getCurrentUser } from "../auth/actions";
 
