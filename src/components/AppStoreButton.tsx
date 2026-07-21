@@ -1,11 +1,17 @@
+"use client";
+
 import React from "react";
 import clsx from "clsx";
 
 import { ctaDetails } from "@/data/cta";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const AppStoreButton = ({ dark }: { dark?: boolean }) => {
   return (
-    <a href={ctaDetails.appStoreUrl}>
+    <a
+      onClick={() => sendGAEvent("event", "app_store_button_click")}
+      href={ctaDetails.appStoreUrl}
+    >
       <button
         type="button"
         className={clsx(

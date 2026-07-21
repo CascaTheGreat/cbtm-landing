@@ -2,11 +2,16 @@ import { NextResponse, userAgent } from "next/server";
 
 const GA_TRACKING_ID = process.env.GOOGLE_ANALYTICS_ID;
 const GA_API_SECRET = process.env.GOOGLE_MEASUREMENT_SECRET;
-const APPSTORE_URL = process.env.NEXT_PUBLIC_APPSTORE_URL;
 
 // UTM data and a ?user_id query param
 export async function GET(req: Request) {
   const { searchParams, pathname } = new URL(req.url);
+  const gaCookie = req.headers
+    .get("cookie")
+    ?.split(";")
+    .find((c) => c.trim().startsWith("_ga="));
+
+  console.log("GA Cookie:", gaCookie);
 
   const utmSource = searchParams.get("utm_source") || "share";
   const utmMedium = searchParams.get("utm_medium") || "cbtm";
@@ -22,12 +27,16 @@ export async function GET(req: Request) {
   if (!isiOS) {
     const utm_term = "non_ios_device";
     try {
-      fetch(
+      const response = await fetch(
         `https://google-analytics.com/mp/collect/?measurement_id=${GA_TRACKING_ID}&api_secret=${GA_API_SECRET}`,
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
-            client_id: clientId,
+            client_id: "123456789.1234567890", // Use a fixed client ID for non-iOS devices
+            validation_behavior: "ENFORCE_RECOMMENDATIONS",
             events: [
               {
                 name: "campaign_details",
@@ -52,18 +61,29 @@ export async function GET(req: Request) {
           }),
         },
       );
+      console.log("GA4 logging response status:", response);
     } catch (error) {
       console.error("Failed to log event to GA4:", error);
     }
     return NextResponse.redirect("https://cbtm.app");
   } else {
+    console.log(
+      "iOS device detected, logging to GA4 and redirecting to app with user ID.",
+    );
+    const utm_term =
+      searchParams.get("user_id") || searchParams.get("utm_term");
     try {
-      fetch(
-        `https://google-analytics.com/mp/collect/?measurement_id=${GA_TRACKING_ID}&api_secret=${GA_API_SECRET}`,
+      const response = await fetch(
+        `https://google-analytics.com/debug/mp/collect/?measurement_id=${GA_TRACKING_ID}&api_secret=${GA_API_SECRET}`,
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
             client_id: clientId,
+            nonpersonalized_ads: false,
+            validation_behavior: "ENFORCE_RECOMMENDATIONS",
             events: [
               {
                 name: "campaign_details",
@@ -91,6 +111,7 @@ export async function GET(req: Request) {
           }),
         },
       );
+      console.log("GA4 logging response status:", response);
     } catch (error) {
       console.error("Failed to log event to GA4:", error);
     }
