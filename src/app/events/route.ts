@@ -2,19 +2,18 @@ import { NextResponse } from "next/server";
 
 const GA_TRACKING_ID = process.env.GOOGLE_ANALYTICS_ID;
 const GA_API_SECRET = process.env.GOOGLE_MEASUREMENT_SECRET;
-const APPSTORE_URL = process.env.NEXT_PUBLIC_APPSTORE_URL;
 
 // UTM data and a ?user_id query param
 export async function GET(req: Request) {
   const { searchParams, pathname } = new URL(req.url);
 
-  const utmSource = searchParams.get("utm_source") || "share";
+  const utmSource = searchParams.get("utm_source") || "share"; // user id
   const utmMedium = searchParams.get("utm_medium") || "cbtm";
   const utmCampaign = searchParams.get("utm_campaign") || "friend_share_route";
-  const userID = searchParams.get("user_id") || "unknown_user";
+  const eventID = searchParams.get("event_id") || "unknown_event";
   const clientId = crypto.randomUUID(); // Generate a unique client ID for this request
 
-  console.log("utmData", utmSource, utmMedium, utmCampaign, userID);
+  console.log("utmData", utmSource, utmMedium, utmCampaign, eventID);
 
   const isiOS =
     /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -74,7 +73,7 @@ export async function GET(req: Request) {
                   source: utmSource,
                   medium: utmMedium,
                   term:
-                    searchParams.get("user_id") ||
+                    searchParams.get("event_id") ||
                     searchParams.get("utm_term") ||
                     "",
                   content: searchParams.get("utm_content") || "",
@@ -83,7 +82,7 @@ export async function GET(req: Request) {
               {
                 name: "page_view",
                 params: {
-                  page_title: "Add friend (non-iOS device)",
+                  page_title: "See event (non-iOS device)",
                   page_location: req.url, // Full inbound tracking link
                   page_path: pathname, // e.g., "/api/download"
                 },
@@ -96,10 +95,10 @@ export async function GET(req: Request) {
       console.error("Failed to log event to GA4:", error);
     }
 
-    if (!userID) {
+    if (!eventID || eventID === "unknown_event") {
       return NextResponse.redirect("https://cbtm.app");
     } else {
-      return NextResponse.redirect(`cbtm://friends/${userID}`);
+      return NextResponse.redirect(`cbtm://explore/events/${eventID}`);
     }
   }
 }
