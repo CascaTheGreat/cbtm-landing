@@ -23,7 +23,9 @@ export default async function SubmitEvent() {
           <p className="text-[var(--foreground-accent)]">
             Please sign in before submitting an event.
           </p>
-          <OTP />
+          <button className="mt-4 rounded-lg bg-[var(--primary)] px-4 py-2 text-white hover:bg-[var(--primary-dark)]">
+            <p>Login</p>
+          </button>
         </div>
       )}
     </Container>
