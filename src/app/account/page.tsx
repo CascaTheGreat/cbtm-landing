@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import { createClient } from "@/lib/supabase/supabaseServer";
 import { getUserInfoById, type UserInfo, signOut } from "../auth/actions";
 import { LogoutButton } from "@/components/LogoutButton";
+import EventList from "@/components/EventsList";
 
 export default async function AccountPage() {
   const supabase = await createClient();
@@ -49,10 +50,10 @@ export default async function AccountPage() {
             <input type="checkbox" checked={userInfo.visible} readOnly />
             Visible
           </label>
-          <label className="ml-2">
-            <input type="color" value={userInfo.color} readOnly />
-            Color
-          </label>
+        </div>
+        <div>
+          <h2 className="mb-2 text-4xl">Your Upcoming Events</h2>
+          <EventList userId={userInfo.id} />
         </div>
         <LogoutButton />
       </div>
