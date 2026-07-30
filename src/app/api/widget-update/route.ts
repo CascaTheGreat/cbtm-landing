@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     return Response.json({ error: "Missing id" }, { status: 400 });
   }
 
-  const supabase = createClient(cookies());
+  const supabase = await createClient();
   const { data, error } = await supabase
     .from("pois")
     .select("name, popularity")
