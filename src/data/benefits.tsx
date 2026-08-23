@@ -45,12 +45,6 @@ export const benefits: IBenefit[] = [
       "Access crowd-source insights on the vibes and atmosphere of your favorite spots.",
     bullets: [
       {
-        title: "Pricing FR",
-        description:
-          "Get a college-student friendly breakdown of the cost of drinks and cover charges.",
-        icon: <FiDollarSign size={26} />,
-      },
-      {
         title: "Vibe Check",
         description:
           "Get real-time, crowd-source vibe checks on your favorite hangs.",
@@ -61,6 +55,12 @@ export const benefits: IBenefit[] = [
         description:
           "Join dedicated feeds to yap about the situation while you're there.",
         icon: <FiPieChart size={26} />,
+      },
+      {
+        title: "Insider Info",
+        description:
+          "Access a curated collection of insider info on venues, clubs, and events, so you can make the most of your night out.",
+        icon: <FiDollarSign size={26} />,
       },
     ],
     imageSrc: "/images/mockup-2.webp",
@@ -79,7 +79,7 @@ export const benefits: IBenefit[] = [
       {
         title: "You Control Access",
         description:
-          "You have complete control over which users can see your access and when. Users will never see more than you allow, and then never more than the building you're in.",
+          "You have complete control over which users can see your location and when. Users will never see more than you allow, and never more than the building you're in.",
         icon: <FiUser size={26} />,
       },
       {
