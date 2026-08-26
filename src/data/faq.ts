@@ -5,7 +5,7 @@ export const faqs: IFAQ[] = [
   {
     question: `Is ${siteDetails.siteName} secure?`,
     answer:
-      "Absolutely. All location information is calculated on your device, so our servers only send out anonymous, aggregated data. When you share your location with friends, only the building you are in is shared, not your exact location. We also use end-to-end encryption for all data transfers, ensuring your information remains private and secure.",
+      "Absolutely. Our servers only send out anonymous, aggregated data. When you share your location with friends, only the building you are in is shared, not your exact location. We also use end-to-end encryption for all data transfers, ensuring your information remains private and secure.",
   },
   {
     question: `Can I use ${siteDetails.siteName} on multiple devices?`,
