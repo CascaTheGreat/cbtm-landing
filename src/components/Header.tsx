@@ -9,6 +9,7 @@ import Image from "next/image";
 import Container from "./Container";
 import { siteDetails } from "@/data/siteDetails";
 import { menuItems } from "@/data/menuItems";
+import { ctaDetails } from "@/data/cta";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ const Header: React.FC = () => {
             ))}
             <li>
               <Link
-                href="#cta"
+                href={ctaDetails.appStoreUrl}
                 className="text-white bg-primary hover:bg-primary-accent px-8 py-3 rounded-full transition-colors"
               >
                 Download

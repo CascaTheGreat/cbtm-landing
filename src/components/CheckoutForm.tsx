@@ -11,7 +11,7 @@ export default function CheckoutForm(userId: { userId: string }): JSX.Element {
   return (
     <form
       action={formAction}
-      className="mt-8 flex flex-col items-center justify-center gap-4"
+      className="mt-4 flex flex-col items-center justify-center gap-4"
     >
       <input type="hidden" name="uiMode" value="hosted" />
       <input type="hidden" name="userId" value={userId.userId} />
