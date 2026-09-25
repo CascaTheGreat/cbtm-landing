@@ -6,11 +6,15 @@ import LambdaSvg from "./lambda";
 
 export default function DonatePage(): JSX.Element {
   const [userId, setUserId] = useState<string | null>(null);
+  const [isiPhone, setIsiPhone] = useState<boolean>(false);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const userIdParam = urlParams.get("user_id");
     setUserId(userIdParam);
+
+    // Check if the user is on an iPhone
+    setIsiPhone(/iPhone/.test(navigator.userAgent));
   }, []);
 
   if (userId) {
@@ -94,7 +98,11 @@ export default function DonatePage(): JSX.Element {
             Lau the longest and win the grand prize.
           </p>
           <a
-            href="https://apps.apple.com/us/app/cbtm/id6789364778"
+            href={
+              isiPhone
+                ? "cbtm://explore/lambda/register"
+                : "https://apps.apple.com/us/app/cbtm/id6789364778"
+            }
             className="rounded-lg bg-[#010057] px-8 py-4 text-white hover:bg-blue-600 mt-10"
           >
             Join the Fun
